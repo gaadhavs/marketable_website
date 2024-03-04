@@ -1,0 +1,58 @@
+body{
+    background-image: url('graph.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5% 0%;
+    border-radius: 2%;
+    background-color: #000000ce;
+}
+.brand{
+    padding:3%;
+    margin: 3%;
+    background-image: url('images.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+}
+input{
+    margin: 2%;
+    font-size: 1.2rem;
+    background-color: transparent;
+    padding: 1%;    
+    border: 2px solid #aa00ff;
+    border-radius: .4rem;
+}
+button{
+    margin: 1%;
+    padding: 3%;
+    background-color: #aa00ff;
+    border: 0px;
+    font-size: 1.2rem;
+    border-radius: .4rem    ;
+    cursor: pointer;
+    width: 65%;
+}
+button:hover{
+    background-color: #aa00ff54;
+    transition: .3s;
+}
+.already_user{
+    margin: 1%;
+    font-size: 100%;
+    color: white;
+}

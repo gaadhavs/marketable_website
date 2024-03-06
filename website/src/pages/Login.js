@@ -30,7 +30,7 @@ export default function Register() {
             
             <button type='submit'>Login</button>
             <div className="already_user">
-                Don't have an outcome? <Link to='/register'>Register</Link>
+                Don't have an account? <Link to='/register'>Register</Link>
             </div>
         </form>
     </div>

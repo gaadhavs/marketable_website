@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './register.css'
+import './login.css'
+import axios  from "axios"
 export default function Register() {
     const handleSubmit=(event)=>{
         event.preventDefault();
@@ -11,7 +12,7 @@ export default function Register() {
     }
 
   return (
-    <div>
+    <div className='login_body'>
         <form onSubmit={(event)=>handleSubmit(event)}>
             <div className="brand">
             </div>

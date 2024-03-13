@@ -9,7 +9,7 @@ app.use(cors());
 
 mongoose
   .connect(
-    "mongodb+srv://amalkrishna:GdkmBBACsi7M0ZPY@marketable.rifrjt3.mongodb.net/?retryWrites=true&w=majority&appName=marketable"
+    "mongodb+srv://amalkrishna528:amal1234@marketable.fe4hhlx.mongodb.net/?retryWrites=true&w=majority&appName=marketable"
   )
   .then(() => {
     console.log("connected to database");

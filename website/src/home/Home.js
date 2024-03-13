@@ -34,23 +34,26 @@ export default function Home() {
   return (
     <div className="navbar_body">
       <div className="navbar_left">
-        <h1>Marketable</h1>
+        <h1>XXXXXXXXXX</h1>
       </div>
       <div className="navbar_right">
         {isLoggedIn ? (
           <>
-            <h1>{username}</h1>
-            <h1 onClick={handleLogout}>Logout</h1>
+            <div className="dropdown">
+            <button className="dropbtn">{username}</button>
+            <div className="dropdown-content">
+              <Link to="/login" onClick={handleLogout}>Logout</Link>
+            </div>
+          </div>
           </>
         ) : (
-          <>
-            <Link to="/login">
-              <h1>Login</h1>
-            </Link>
-            <Link to="/register">
-              <h1>Register</h1>
-            </Link>
-          </>
+          <div className="dropdown">
+            <button className="dropbtn">Profile</button>
+            <div className="dropdown-content">
+              <Link to="/login">Login</Link>
+              <Link to="/register">Register</Link>
+            </div>
+          </div>
         )}
       </div>
     </div>

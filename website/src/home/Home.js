@@ -32,32 +32,35 @@ export default function Home() {
 
   return (
     <div className="navbar_body">
-      <div className="logo">
-        
+      <div className="left_navbar">
+        <input type="text" placeholder="Search" className="search-input" />
       </div>
-      <div className="navbar_left">
-        <h1>Courses</h1>
-        <h1>Cart</h1>
-      </div>
-      <div className="navbar_right">
-        {isLoggedIn ? (
-          <div className="dropdown">
-            <button className="dropbtn">{username}</button>
-            <div className="dropdown-content">
-              <Link to="/" onClick={handleLogout}>
-                Logout
-              </Link>
+
+      <div className="right_navbar">
+        <div className="heading">
+          <h1>Courses</h1>
+          <h1>Cart</h1>
+        </div>
+        <div className="profile">
+          {isLoggedIn ? (
+            <div className="dropdown">
+              <button className="dropbtn">{username}</button>
+              <div className="dropdown-content">
+                <Link to="/" onClick={handleLogout}>
+                  Logout
+                </Link>
+              </div>
             </div>
-          </div>
-        ) : (
-          <div className="dropdown">
-            <button className="dropbtn">Profile</button>
-            <div className="dropdown-content">
-              <Link to="/login">Login</Link>
-              <Link to="/register">Register</Link>
+          ) : (
+            <div className="dropdown">
+              <button className="dropbtn">Profile</button>
+              <div className="dropdown-content">
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

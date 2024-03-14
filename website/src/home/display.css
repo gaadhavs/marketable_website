@@ -1,8 +1,11 @@
+.main_display_all{
+    width:100%;
+    height:100%;
+}
 .main_display{
     width:90%;
     margin:0 auto;
-    height: 80vh    ;
-    margin-top: 1%;
+    height: 100%    ;
 }
 
 .container{

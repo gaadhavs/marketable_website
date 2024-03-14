@@ -3,6 +3,7 @@
     import './register.css'
     import axios from "axios"
     import cookies from "js-cookie"
+
     export default function Register() {
         const navigate=useNavigate();
         
@@ -14,12 +15,11 @@
         const handleSubmit=(event)=>{
             event.preventDefault();
             if(handleValidation()){
-                axios.post('http://localhost:3001/register',{name,email,password})
+                axios.post('http://localhost:4000/register',{name,email,password})
                 .then(result=>
                     {
                         console.log(result)
                         cookies.set('username', name);
-                        cookies.set('password', password);
                         navigate('/');
                     })
                 .catch((error) => {

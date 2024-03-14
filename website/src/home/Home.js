@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./home.css";
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import cookies from "js-cookie";
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState("");
-  const navigate=useNavigate();
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.body.classList.add("home");
@@ -15,6 +14,7 @@ export default function Home() {
       document.body.classList.remove("home");
     };
   }, []);
+
   useEffect(() => {
     const storedUsername = cookies.get("username");
     if (storedUsername) {
@@ -25,7 +25,6 @@ export default function Home() {
 
   const handleLogout = () => {
     cookies.remove("username");
-    cookies.remove("password"); 
     setIsLoggedIn(false);
     setUsername("");
     navigate("/");
@@ -33,19 +32,23 @@ export default function Home() {
 
   return (
     <div className="navbar_body">
+      <div className="logo">
+        
+      </div>
       <div className="navbar_left">
-        <h1>XXXXXXXXXX</h1>
+        <h1>Courses</h1>
+        <h1>Cart</h1>
       </div>
       <div className="navbar_right">
         {isLoggedIn ? (
-          <>
-            <div className="dropdown">
+          <div className="dropdown">
             <button className="dropbtn">{username}</button>
             <div className="dropdown-content">
-              <Link to="/login" onClick={handleLogout}>Logout</Link>
+              <Link to="/" onClick={handleLogout}>
+                Logout
+              </Link>
             </div>
           </div>
-          </>
         ) : (
           <div className="dropdown">
             <button className="dropbtn">Profile</button>
@@ -59,35 +62,3 @@ export default function Home() {
     </div>
   );
 }
-/*
-  <nav className="navbar_main">
-          <div className="navbar-brand">
-            <h1>My Website</h1>
-          </div>
-          <div className="navbar-links">
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="navbar-buttons">
-            {!isLoggedIn && (
-              <>
-                <Link to="/login">
-                  <button>Login</button>
-                </Link>
-                <Link to="/register">
-                  <button>Register</button>
-                </Link>
-              </>
-            )}
-          </div>
-        </nav>
-  */
